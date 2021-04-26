@@ -1,0 +1,122 @@
+// base color
+$blue: #324157;
+$light-blue: #3a71a8;
+$red: #c03639;
+$pink: #e65d6e;
+$green: #00913e;
+$tiffany: #4ab7bd;
+$yellow: #fec171;
+$panGreen: #30b08f;
+$black: #333333;
+$gray: rgba(0, 0, 0, 0.5);
+
+/* 改变主题色变量 */
+$--color-primary: #3b82f6;
+
+$background: #0c4a6e;
+
+// sidebar
+$menuText: #bfcbd9;
+$menuActiveText: #409eff;
+$subMenuActiveText: #f4f4f5; // https://github.com/ElemeFE/element/issues/12951
+
+$menuBg: #304156;
+$menuHover: #263445;
+$sidebarTitle: #ffffff;
+
+$menuLightBg: #ffffff;
+$menuLightHover: #f0f1f5;
+$sidebarLightTitle: #001529;
+
+$subMenuBg: #1f2d3d;
+$subMenuHover: #001528;
+
+$sideBarWidth: 200px;
+
+$boxShadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+/* 圆角 */
+$borderRadiusMedium: 10px;
+$borderRadiusSmall: 5px;
+
+$fontSizeTitle: 20px;
+$fontSizeMedium: 18px;
+$fontSizeSmall: 14px;
+$fontSizeMini: 12px;
+
+$fontWeightMedium: 900;
+$fontWeightSmall: 700;
+$fontWeightMini: 500;
+
+$marginMedium: 30px;
+$marginSmall: 20px;
+$paddingMedium: 30px;
+$paddingSmall: 20px;
+
+$tableBg: rgba(59, 130, 246, 0.1);
+$tableBor: 1px solid rgba(191, 219, 254, 1);
+
+// the :export directive is the magic sauce for webpack
+// https://www.bluematador.com/blog/how-to-share-variables-between-js-and-sass
+:export {
+  menuText: $menuText;
+  menuActiveText: $menuActiveText;
+  subMenuActiveText: $subMenuActiveText;
+  menuBg: $menuBg;
+  menuHover: $menuHover;
+  menuLightBg: $menuLightBg;
+  menuLightHover: $menuLightHover;
+  subMenuBg: $subMenuBg;
+  subMenuHover: $subMenuHover;
+  sideBarWidth: $sideBarWidth;
+  sidebarTitle: $sidebarTitle;
+  sidebarLightTitle: $sidebarLightTitle;
+}
+// el-card 样式调整
+:deep(.el-card) {
+  border: none;
+  border-radius: $borderRadiusMedium;
+  box-shadow: unset;
+}
+:deep(.el-card__header) {
+  border: none;
+}
+.cust-card {
+  &-header {
+    border-left: 4px solid #3b82f6;
+    padding-left: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &-title {
+      font-size: $fontSizeTitle;
+      font-weight: $fontWeightSmall;
+    }
+  }
+  &-table {
+    :deep(.el-card__body) {
+      padding-top: 0;
+    }
+  }
+}
+.card-table-margin-bottom {
+  // margin-bottom: $marginSmall;
+  content-visibility: auto;
+  :deep(.el-card__body) {
+    padding-top: 0;
+  }
+}
+
+:deep(.el-dialog__header) {
+  background: rgb(12, 74, 110);
+  padding: 10px 20px;
+  .el-dialog__title {
+    color: white;
+  }
+  .el-dialog__headerbtn {
+    top: 14px;
+  }
+}
+
+.module-title {
+  padding: $paddingMedium;
+}
