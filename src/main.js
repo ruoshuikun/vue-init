@@ -7,6 +7,10 @@ import router from './router'
 import store from './store'
 import { imageIsExist, generatorAvator } from './utils/tool'
 
+//条件引入模拟服务器 MockJS优先级高于域名代理 会导致远程API无法访问
+//小心,Boolean('false')等于true 'false'不等于false
+eval(process.env.VUE_APP_MOCK) && require('@/mock')
+
 const app = createApp(App)
 
 // 添加全局图片前缀

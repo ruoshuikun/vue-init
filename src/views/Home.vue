@@ -7,12 +7,23 @@
 
 <script>
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import HelloWorld from '@/components/HelloWorld.vue'
+import { testMock } from 'apis/login'
 
 export default {
-  name: "Home",
+  name: 'Home',
   components: {
     HelloWorld,
   },
-};
+  mounted() {
+    this.testMock()
+  },
+  methods: {
+    testMock() {
+      testMock().then((res) => {
+        console.info('res', res)
+      })
+    },
+  },
+}
 </script>

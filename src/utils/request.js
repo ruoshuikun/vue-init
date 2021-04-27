@@ -1,8 +1,8 @@
 import axios from 'axios'
 import { ElNotification } from 'element-plus'
 import store from '@/store'
-import { getToken } from '@/utils/auth'
-import errorCode from '@/utils/errorCode'
+import { getToken } from 'utils/auth'
+import errorCode from 'utils/errorCode'
 
 axios.defaults.headers['Content-Type'] = 'application/json;charset=utf-8'
 
